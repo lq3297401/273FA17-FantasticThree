@@ -1,0 +1,11 @@
+Script started on Wed Oct  4 22:35:17 2017
+[?1034hbash-3.2$ docker run -it --rm --name lab1-client -v "$PWD":/usr/src/m yapp -w /usr/src/myapp 273web:1.0 python3.6 client.py 192.168.0.1
+Client is connecting to Server at 192.168.0.1:3000...
+## PUT Request: value = foo
+## PUT Response: key = 09e0ee19d84f4de0ace418dab2e8af97
+## GET Request: key = 09e0ee19d84f4de0ace418dab2e8af97
+## GET Response: value = foo
+bash-3.2$ exit
+exit
+
+Script done on Wed Oct  4 22:35:31 2017
