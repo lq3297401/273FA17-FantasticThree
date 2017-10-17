@@ -2,6 +2,7 @@
 from flask import Flask, jsonify, abort, make_response, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 import os
+from os import path
 import random
 import json
 import rocksdb
@@ -12,8 +13,10 @@ app = Flask(__name__)
 
 @app.route('/api/v1/scripts', methods=['POST'])
 def create_script():
+    file = request.files['data']
+    filename = secure_filename(file.filename)
     x = str(random.randint(10000, 99999))
-    y = open("foo.py").read()
+    y = open(filename).read()
     db.put(x.encode(), y.encode())
     record = {
         'script-id': x
