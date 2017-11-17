@@ -1,0 +1,88 @@
+hw2
+
+grpc replication in python
+
+two rocksdb go through grpc server
+
+pinterest page
+
+Figure 2
+
+request come to grpc server then talk to rocksdb 1
+
+then replication to rocksdb2 and grpc client
+
+
+pull or push the error will be different
+
+
+****
+
+GetLatestSequenceNumber()
+
+GetUpdatesSince()
+
+****
+
+grpc read and write to rocksdb
+
+from master to 1 slave
+
+
+1) communication model in grpc syn/asyn/stream
+
+2) use sequence # to detect the changes
+
+
+**********
+
+In this assignment 2, you will be implementing a RocksDB replication in Python using the design from this C++ replicator.  
+
+https://medium.com/@Pinterest_Engineering/open-sourcing-rocksplicator-a-real-time-rocksdb-data-replicator-558cd3847a9d
+
+You can use Lab 1 as a based line. Differences form the replicator are:
+
+You will be using GRPC Python server instead of Thrift server.
+You will be exploring more into GRPC sync, async, and streaming.
+You can ignore all cluster management features from the replicator.
+
+
+grpc steam one way
+
+
+server (@replicator(primer-on-python-decorators), db.put, db.delete, rocksDB)
+client (
+
+
+***********
+
+for loop both side grpc, async apporach**
+
+maintain the connection
+
+1. 40% decorator
+
+2. 25% 
+
+3. grpc sterming connection
+
+
+yield
+
+next(our_generator)
+
+
+def simple_generator_function():
+yield 1
+yield 2
+yield 3
+
+for value in simple_generator_function()
+    print
+...
+
+
+next(our_generator)
+
+
+
