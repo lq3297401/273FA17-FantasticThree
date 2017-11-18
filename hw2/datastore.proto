@@ -11,7 +11,12 @@ message Response {
     string data = 2;
 }
 
+message PullRequest{
+	string action = 1;
+}
+
 service Datastore {
    rpc put(stream Request) returns (stream Response) {}
    rpc delete(stream Request) returns (stream Response) {}
+   rpc replicator(PullRequest) returns (stream Response) {}
 }
